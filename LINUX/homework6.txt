@@ -1,0 +1,105 @@
+Задание 1
+________________________________
+student@Ubuntu-MySQL-VirtualBox:~$ cat > script1.sh
+#!/bin/bash
+echo "Имя пользователя: " $USER 
+echo "Имя пользователя: " $USER
+echo "Имя пользователя: " $USER
+student@Ubuntu-MySQL-VirtualBox:~$ chmod +x *.sh
+student@Ubuntu-MySQL-VirtualBox:~$ ./script1.sh
+Имя пользователя:  student
+Имя пользователя:  student
+Имя пользователя:  student
+_______________________________
+Задание 2
+________________________________
+student@Ubuntu-MySQL-VirtualBox:~$ printf > while.sh
+printf: использование: printf [-v var] format [arguments]
+student@Ubuntu-MySQL-VirtualBox:~$ nano while.sh
+student@Ubuntu-MySQL-VirtualBox:~$ cat while.sh
+#!/bin/bash
+y=0
+while [ $y -lt 101 ]
+do
+  echo $y
+  y=$(( $y + 2 ))
+done
+student@Ubuntu-MySQL-VirtualBox:~$ bash ./while.sh
+0
+2
+4
+6
+8
+10
+12
+14
+16
+18
+20
+22
+24
+26
+28
+30
+32
+34
+36
+38
+40
+42
+44
+46
+48
+50
+52
+54
+56
+58
+60
+62
+64
+66
+68
+70
+72
+74
+76
+78
+80
+82
+84
+86
+88
+90
+92
+94
+96
+98
+100
+student@Ubuntu-MySQL-VirtualBox:~$ 
+_________________________________
+Задание 3
+_________________________________
+student@Ubuntu-MySQL-VirtualBox:~$ nano text.txt
+student@Ubuntu-MySQL-VirtualBox:~$ mkdir backup
+student@Ubuntu-MySQL-VirtualBox:~$ mkdir errors
+student@Ubuntu-MySQL-VirtualBox:~$ nano backup.sh #пишу скрипт для автоматически нумерованных копий исходного файла
+student@Ubuntu-MySQL-VirtualBox:~$ cat backup.sh
+#!/bin/bash
+count=$(ls ~/backup/text* 2>~/errors/errors.txt | wc -l)
+: $[i=$count+1]
+cp ~/text.txt ~/backup/$(printf "text%02d.txt.bak" $i)
+student@Ubuntu-MySQL-VirtualBox:~$ chmod +x *.sh
+
+#вношу активацию скрипта в планировщик (ставлю минуту вместо 10 что не ждать долго при проверке)
+*/1 * * * * ~/backup.sh
+#жду 5 минут
+student@Ubuntu-MySQL-VirtualBox:~$ ls ~/backup
+text01.txt.bak  text02.txt.bak  text03.txt.bak  text04.txt.bak  text05.txt.bak
+student@Ubuntu-MySQL-VirtualBox:~$ crontab -r
+
+
+
+
+
+

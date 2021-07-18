@@ -1,0 +1,139 @@
+_________________________________________________________________
+Задание 1
+__________________________________________________________________
+student@Ubuntu-MySQL-VirtualBox:~$ sudo adduser alex
+Добавляется пользователь «alex» ...
+Добавляется новая группа «alex» (1001) ...
+Добавляется новый пользователь «alex» (1001) в группу «alex» ...
+Создаётся домашний каталог «/home/alex» ...
+Копирование файлов из «/etc/skel» ...
+Введите новый пароль UNIX: 
+Повторите ввод нового пароля UNIX: 
+passwd: пароль успешно обновлён
+Изменение информации о пользователе alex
+Введите новое значение или нажмите ENTER для выбора значения по умолчанию
+	Полное имя []: 
+	Номер комнаты []: 
+	Рабочий телефон []: 
+	Домашний телефон []: 
+	Другое []: 
+Данная информация корректна? [Y/n] 
+student@Ubuntu-MySQL-VirtualBox:~$ sudo tail /etc/passwd
+kernoops:x:116:65534:Kernel Oops Tracking Daemon,,,:/:/bin/false
+pulse:x:117:124:PulseAudio daemon,,,:/var/run/pulse:/bin/false
+rtkit:x:118:126:RealtimeKit,,,:/proc:/bin/false
+saned:x:119:127::/var/lib/saned:/bin/false
+usbmux:x:120:46:usbmux daemon,,,:/var/lib/usbmux:/bin/false
+student:x:1000:1000:student,,,:/home/student:/bin/bash
+vboxadd:x:999:1::/var/run/vboxadd:/bin/false
+mysql:x:121:129:MySQL Server,,,:/nonexistent:/bin/false
+sshd:x:122:65534::/var/run/sshd:/usr/sbin/nologin
+alex:x:1001:1001:,,,:/home/alex:/bin/bash
+student@Ubuntu-MySQL-VirtualBox:~$ tail /etc/passwd
+kernoops:x:116:65534:Kernel Oops Tracking Daemon,,,:/:/bin/false
+pulse:x:117:124:PulseAudio daemon,,,:/var/run/pulse:/bin/false
+rtkit:x:118:126:RealtimeKit,,,:/proc:/bin/false
+saned:x:119:127::/var/lib/saned:/bin/false
+usbmux:x:120:46:usbmux daemon,,,:/var/lib/usbmux:/bin/false
+student:x:1000:1000:student,,,:/home/student:/bin/bash
+vboxadd:x:999:1::/var/run/vboxadd:/bin/false
+mysql:x:121:129:MySQL Server,,,:/nonexistent:/bin/false
+sshd:x:122:65534::/var/run/sshd:/usr/sbin/nologin
+alex:x:1001:1001:,,,:/home/alex:/bin/bash
+student@Ubuntu-MySQL-VirtualBox:~$ sudo tail /etc/shadow
+kernoops:*:17954:0:99999:7:::
+pulse:*:17954:0:99999:7:::
+rtkit:*:17954:0:99999:7:::
+saned:*:17954:0:99999:7:::
+usbmux:*:17954:0:99999:7:::
+student:$6$ojbn2L1n$UjFVZSOq72E0NHw9uXkYSPTSfHjxkfEwO0ud298lZsn/bHXlDNtALUaSZaBR7S/gupB9kdo7.JigzBAHb/x7B.:18008:0:99999:7:::
+vboxadd:!:18008::::::
+mysql:!:18008:0:99999:7:::
+sshd:*:18008:0:99999:7:::
+alex:$6$3OY/gMMU$Aq7/RmLFY9Hd/kY1B.QrBEKCMallVsJN9Vsf.shuGcS7NTX0JdZyh/A2OI3aVUj0vXRMDOn0UxTtFWKfXJQKw.:18791:0:99999:7:::
+student@Ubuntu-MySQL-VirtualBox:~$ sudo userdel -r alex
+userdel: почтовый ящик alex (/var/mail/alex) не найден
+________________________________________________________________________
+Задание 2
+__________________________________________________________________________
+student@Ubuntu-MySQL-VirtualBox:~$ sudo adduser alex
+Добавляется пользователь «alex» ...
+Добавляется новая группа «alex» (1001) ...
+Добавляется новый пользователь «alex» (1001) в группу «alex» ...
+Создаётся домашний каталог «/home/alex» ...
+Копирование файлов из «/etc/skel» ...
+Введите новый пароль UNIX: 
+Повторите ввод нового пароля UNIX: 
+passwd: пароль успешно обновлён
+Изменение информации о пользователе alex
+Введите новое значение или нажмите ENTER для выбора значения по умолчанию
+	Полное имя []: 
+	Номер комнаты []: 
+	Рабочий телефон []: 
+	Домашний телефон []: 
+	Другое []: 
+Данная информация корректна? [Y/n] 
+student@Ubuntu-MySQL-VirtualBox:~$ groupadd engineers
+groupadd: Permission denied.
+groupadd: не удалось заблокировать /etc/group; попробуйте ещё раз позже.
+student@Ubuntu-MySQL-VirtualBox:~$ sudo groupadd engineers
+student@Ubuntu-MySQL-VirtualBox:~$ sudo usermod -aG engineers alex 
+student@Ubuntu-MySQL-VirtualBox:~$ tail etc/group
+tail: невозможно открыть 'etc/group' для чтения: Нет такого файла или каталога
+student@Ubuntu-MySQL-VirtualBox:~$ tail /etc/group
+pulse:x:124:
+pulse-access:x:125:
+rtkit:x:126:
+saned:x:127:
+student:x:1000:
+sambashare:x:128:student
+vboxsf:x:999:
+mysql:x:129:
+alex:x:1001:
+engineers:x:1002:alex
+student@Ubuntu-MySQL-VirtualBox:~$ sudo deluser alex engineers
+Удаляется пользователь «alex» из группы «engineers» ...
+Готово.
+student@Ubuntu-MySQL-VirtualBox:~$ 
+________________________________________________________________________________
+Задание 3
+___________________________________________________________________________________
+student@Ubuntu-MySQL-VirtualBox:~$ sudo usermod -aG sudo alex
+student@Ubuntu-MySQL-VirtualBox:~$ su alex
+Пароль: 
+To run a command as administrator (user "root"), use "sudo <command>".
+See "man sudo_root" for details.
+
+alex@Ubuntu-MySQL-VirtualBox:/home/student$ sudo apt update
+[sudo] пароль для alex: 
+Сущ:1 http://ru.archive.ubuntu.com/ubuntu xenial InRelease
+Сущ:2 http://ru.archive.ubuntu.com/ubuntu xenial-updates InRelease
+Сущ:3 http://ru.archive.ubuntu.com/ubuntu xenial-backports InRelease                                            
+Сущ:4 http://ppa.launchpad.net/linuxuprising/java/ubuntu xenial InRelease                                       
+Сущ:5 http://ppa.launchpad.net/webupd8team/java/ubuntu xenial InRelease                
+Сущ:6 https://dbeaver.io/debs/dbeaver-ce  InRelease                                    
+Сущ:7 http://security.ubuntu.com/ubuntu xenial-security InRelease
+Чтение списков пакетов… Готово
+Построение дерева зависимостей       
+Чтение информации о состоянии… Готово
+Может быть обновлено 453 пакета. Запустите «apt list --upgradable» для их показа.
+
+___________________________________________________________________________________
+Задание 4
+_________________________________________________________________________________
+student@Ubuntu-MySQL-VirtualBox:~$ sudo usermod -aG shadow alex
+student@Ubuntu-MySQL-VirtualBox:~$ su alex
+Пароль: 
+alex@Ubuntu-MySQL-VirtualBox:/home/student$  tail /etc/shadow
+kernoops:*:17954:0:99999:7:::
+pulse:*:17954:0:99999:7:::
+rtkit:*:17954:0:99999:7:::
+saned:*:17954:0:99999:7:::
+usbmux:*:17954:0:99999:7:::
+student:$6$ojbn2L1n$UjFVZSOq72E0NHw9uXkYSPTSfHjxkfEwO0ud298lZsn/bHXlDNtALUaSZaBR7S/gupB9kdo7.JigzBAHb/x7B.:18008:0:99999:7:::
+vboxadd:!:18008::::::
+mysql:!:18008:0:99999:7:::
+sshd:*:18008:0:99999:7:::
+alex:$6$jowSmjPg$AmFIry4qq4AGxR51I8609dBPkYLxLdzGxeUfEddR1IWK2KMQ7mT38YIHn4joZv.qbJSAsY8fFoYzdppbD3PFZ/:18791:0:99999:7:::
+
+

@@ -1,0 +1,96 @@
+Задание 1
+_______________________________________________________________________
+student@Ubuntu-MySQL-VirtualBox:~$ sudo apt-add-repository ppa:nginx/stable
+ This PPA contains the latest Stable Release version of the nginx web server software.
+
+**Only Non-End-of-Life Ubuntu Releases are supported in this PPA**
+
+**Development releases of Ubuntu are not officially supported by this PPA, and uploads for those will not be available until actual final releases for those versions**
+ Больше информации: https://launchpad.net/~nginx/+archive/ubuntu/stable
+Нажмите [ENTER] чтобы продолжить или Ctrl-C для отмены добавления
+sudo apt update
+gpg: создана таблица ключей `/tmp/tmpp9_bpbnm/secring.gpg'
+gpg: создана таблица ключей `/tmp/tmpp9_bpbnm/pubring.gpg'
+gpg: запрашиваю ключ C300EE8C с сервера hkp keyserver.ubuntu.com
+gpg: /tmp/tmpp9_bpbnm/trustdb.gpg: создана таблица доверия
+gpg: ключ C300EE8C: импортирован открытый ключ "Launchpad Stable"
+gpg: не найдено абсолютно доверенных ключей
+gpg: Всего обработано: 1
+gpg:               импортировано: 1  (RSA: 1)
+OK
+student@Ubuntu-MySQL-VirtualBox:~$ sudo apt install nginx
+Чтение списков пакетов… Готово
+Построение дерева зависимостей       
+Чтение информации о состоянии… Готово
+Следующий пакет устанавливался автоматически и больше не требуется:
+  snapd-login-service
+Для его удаления используйте «sudo apt autoremove».
+Будут установлены следующие дополнительные пакеты:
+  nginx-common nginx-core
+Предлагаемые пакеты:
+  fcgiwrap nginx-doc
+Следующие НОВЫЕ пакеты будут установлены:
+  nginx nginx-common nginx-core
+Обновлено 0 пакетов, установлено 3 новых пакетов, для удаления отмечено 0 пакетов, и 453 пакетов не обновлено.
+Необходимо скачать 460 kB архивов.
+После данной операции объём занятого дискового пространства возрастёт на 1 485 kB.
+Хотите продолжить? [Д/н] д
+Пол:1 http://ru.archive.ubuntu.com/ubuntu xenial-updates/main amd64 nginx-common all 1.10.3-0ubuntu0.16.04.5 [26,9 kB]
+Пол:2 http://ru.archive.ubuntu.com/ubuntu xenial-updates/main amd64 nginx-core amd64 1.10.3-0ubuntu0.16.04.5 [429 kB]
+Пол:3 http://ru.archive.ubuntu.com/ubuntu xenial-updates/main amd64 nginx all 1.10.3-0ubuntu0.16.04.5 [3 494 B]
+Получено 460 kB за 0с (2 499 kB/s)
+Предварительная настройка пакетов ...
+Выбор ранее не выбранного пакета nginx-common.
+(Чтение базы данных … на данный момент установлено 222162 файла и каталога.)
+Подготовка к распаковке …/nginx-common_1.10.3-0ubuntu0.16.04.5_all.deb …
+Распаковывается nginx-common (1.10.3-0ubuntu0.16.04.5) …
+Выбор ранее не выбранного пакета nginx-core.
+Подготовка к распаковке …/nginx-core_1.10.3-0ubuntu0.16.04.5_amd64.deb …
+Распаковывается nginx-core (1.10.3-0ubuntu0.16.04.5) …
+Выбор ранее не выбранного пакета nginx.
+Подготовка к распаковке …/nginx_1.10.3-0ubuntu0.16.04.5_all.deb …
+Распаковывается nginx (1.10.3-0ubuntu0.16.04.5) …
+Обрабатываются триггеры для systemd (229-4ubuntu21.21) …
+Обрабатываются триггеры для ureadahead (0.100.0-19) …
+Обрабатываются триггеры для ufw (0.35-0ubuntu2) …
+Настраивается пакет nginx-common (1.10.3-0ubuntu0.16.04.5) …
+Настраивается пакет nginx-core (1.10.3-0ubuntu0.16.04.5) …
+Настраивается пакет nginx (1.10.3-0ubuntu0.16.04.5) …
+Обрабатываются триггеры для systemd (229-4ubuntu21.21) …
+Обрабатываются триггеры для ureadahead (0.100.0-19) …
+Обрабатываются триггеры для ufw (0.35-0ubuntu2) …
+student@Ubuntu-MySQL-VirtualBox:~$ sudo dpkg -P nginx
+(Чтение базы данных … на данный момент установлено 222216 файлов и каталогов.)
+Удаляется nginx (1.10.3-0ubuntu0.16.04.5) …
+_________________________________________
+Задание 2
+_______________________________________
+student@Ubuntu-MySQL-VirtualBox:~$ sudo snap find chromium
+Name                      Version           Publisher        Notes  Summary
+chromium                  91.0.4472.114     canonical✓       -      Chromium web browser, open-source version of Chrome
+chromium-ffmpeg           0.1               canonical✓       -      FFmpeg codecs (free and proprietary) for use by third-party browser snaps
+chromium-ffmpeg-test      0.1               osomon           -      Test snap that exercises the slots exposed by chromium-ffmpeg
+keepassxc                 2.6.6             keepassxreboot   -      Modern, secure, and cross-platform password manager compatible with KeePass
+pocket-browser            1.6.2             pocketinc        -      An open-source browser made for privacy and going towards security!
+ungoogled-chromium        91.0.4472.77-1.1  joffreybienvenu  -      Google Chromium, sans integration with Google
+flashcardsmobile          1.0.0             pjacksonlink     -      The ultimate flashcards app.
+boxy-svg                  3.55.0            jarek-foksa      -      Scalable Vector Graphics (SVG) editor
+red-app                   7.0               keshavnrj        -      Best Youtube Experience you will be ever served on Desktop !
+orange-app                5.0               keshavnrj        -      SoundCloud Player / Downloader for Linux Desktop
+utube                     2                 keshavnrj        -      Download/Play Media from Youtube
+digitales-klassenzimmer   2.8.7             hopp-foundation  -      Videokonferenztool Jitsi für Schulen in der Metropolregion Rhein-Neckar
+google-chat-electron      2.5.0             ankurk91         -      Unofficial desktop app for Google Chat.
+restart-chromium          1                 mgibbs-dfrs      -      Restart Browser
+dashkiosk-client-browser  0.1               ogra             -      Chromium in Kiosk mode specifically adjusted for dashkiosk
+student@Ubuntu-MySQL-VirtualBox:~$ sudo snap install chromium
+chromium 91.0.4472.114 from Canonical✓ installed
+_____________________________________________________
+Задание 3
+_________________________________________________
+student@Ubuntu-MySQL-VirtualBox:~$ sudo iptables -P INPUT DROP
+student@Ubuntu-MySQL-VirtualBox:~$ sudo iptables -A INPUT -p tcp --dport 80 -j ACCEPT
+student@Ubuntu-MySQL-VirtualBox:~$ sudo iptables -A INPUT -p tcp --dport 22 -j ACCEPT
+_______________________________________________
+Задание 4
+_________________________________________
+student@Ubuntu-MySQL-VirtualBox:~$ sudo iptables -A PREROUTING -t nat -p tcp --dport 80 -j REDIRECT --to-ports 8080

@@ -1,0 +1,36 @@
+Задание 1
+____________________________________________________________________
+student@Ubuntu-MySQL-VirtualBox:~$ echo > my_file.txt
+student@Ubuntu-MySQL-VirtualBox:~$ ls
+examples.desktop  ssh    Документы  Изображения  Общедоступные  Шаблоны
+my_file.txt       Видео  Загрузки   Музыка       Рабочий стол
+student@Ubuntu-MySQL-VirtualBox:~$ cat /etc/* 1>etc_files.txt 2>etc_errors.txt
+student@Ubuntu-MySQL-VirtualBox:~$ ls
+etc_errors.txt    my_file.txt  Документы    Музыка         Шаблоны
+etc_files.txt     ssh          Загрузки     Общедоступные
+examples.desktop  Видео        Изображения  Рабочий стол
+_____________________________________________________________________
+Задание 2
+student@Ubuntu-MySQL-VirtualBox:~$ ls -ld /etc/* | cut -f5 -d " " | sort | uniq
+dip
+lp
+root
+shadow
+
+student@Ubuntu-MySQL-VirtualBox:~$ ls -ld /etc/* | cut -f5 -d " " | sort | uniq | cat > ~/my_file.txt
+_________________________________________________________________________
+Задание 3
+student@Ubuntu-MySQL-VirtualBox:~$ systemctl restart sshd
+student@Ubuntu-MySQL-VirtualBox:~$ systemctl reload sshd
+#restart выключает и заново включает службу. reload обновляет конфигурацию службы не выключая её
+student@Ubuntu-MySQL-VirtualBox:~$ cat > my_file2.txt 
+text text student@Ubuntu-MySQL-VirtualBox:~$ 
+#CTRL+D сообщает терминалу, что поток ввода закончен
+____________________________________________________________________________
+
+Задание 4
+student@Ubuntu-MySQL-VirtualBox:~$ ps aux | grep mc
+student  24286  0.0  0.3  69120  8000 pts/6    Ss+  21:17   0:00 mc
+student  24300  0.0  0.0  21316   976 pts/4    S+   21:17   0:00 grep --color=auto mc
+student@Ubuntu-MySQL-VirtualBox:~$ kill -9 24286
+student@Ubuntu-MySQL-VirtualBox:~$ 

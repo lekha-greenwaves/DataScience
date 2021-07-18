@@ -1,0 +1,131 @@
+Задание 2
+____________________________________________
+
+student@Ubuntu-MySQL-VirtualBox:~$ sudo apt install docker.io
+Чтение списков пакетов… Готово
+Построение дерева зависимостей       
+Чтение информации о состоянии… Готово
+Следующие пакеты устанавливались автоматически и больше не требуются:
+  nginx-common nginx-core snapd-login-service
+Для их удаления используйте «sudo apt autoremove».
+Будут установлены следующие дополнительные пакеты:
+  bridge-utils cgroupfs-mount containerd git git-man liberror-perl pigz runc
+  ubuntu-fan
+Предлагаемые пакеты:
+  aufs-tools btrfs-tools debootstrap docker-doc rinse zfs-fuse | zfsutils
+  git-daemon-run | git-daemon-sysvinit git-doc git-el git-email git-gui gitk
+  gitweb git-arch git-cvs git-mediawiki git-svn
+Следующие НОВЫЕ пакеты будут установлены:
+  bridge-utils cgroupfs-mount containerd docker.io git git-man liberror-perl
+  pigz runc ubuntu-fan
+Обновлено 0 пакетов, установлено 10 новых пакетов, для удаления отмечено 0 пакетов, и 454 пакетов не обновлено.
+Необходимо скачать 56,4 MB архивов.
+После данной операции объём занятого дискового пространства возрастёт на 283 MB.
+Хотите продолжить? [Д/н] д
+Пол:1 http://ru.archive.ubuntu.com/ubuntu xenial/universe amd64 pigz amd64 2.3.1-2 [61,1 kB]
+Пол:2 http://ru.archive.ubuntu.com/ubuntu xenial/main amd64 bridge-utils amd64 1.5-9ubuntu1 [28,6 kB]
+Пол:3 http://ru.archive.ubuntu.com/ubuntu xenial/universe amd64 cgroupfs-mount all 1.2 [4 970 B]
+Пол:4 http://ru.archive.ubuntu.com/ubuntu xenial-updates/universe amd64 runc amd64 1.0.0~rc7+git20190403.029124da-0ubuntu1~16.04.4 [1 890 kB]
+Пол:5 http://ru.archive.ubuntu.com/ubuntu xenial-updates/universe amd64 containerd amd64 1.2.6-0ubuntu1~16.04.6 [19,9 MB]
+Пол:6 http://ru.archive.ubuntu.com/ubuntu xenial-updates/universe amd64 docker.io amd64 18.09.7-0ubuntu1~16.04.7 [30,5 MB]
+Пол:7 http://ru.archive.ubuntu.com/ubuntu xenial/main amd64 liberror-perl all 0.17-1.2 [19,6 kB]
+Пол:8 http://ru.archive.ubuntu.com/ubuntu xenial-updates/main amd64 git-man all 1:2.7.4-0ubuntu1.10 [737 kB]
+Пол:9 http://ru.archive.ubuntu.com/ubuntu xenial-updates/main amd64 git amd64 1:2.7.4-0ubuntu1.10 [3 183 kB]
+Пол:10 http://ru.archive.ubuntu.com/ubuntu xenial-updates/main amd64 ubuntu-fan all 0.12.8~16.04.3 [35,1 kB]
+Получено 56,4 MB за 5с (10,7 MB/s)
+Предварительная настройка пакетов ...
+Выбор ранее не выбранного пакета pigz.
+(Чтение базы данных … на данный момент установлен 222221 файл и каталог.)
+Подготовка к распаковке …/pigz_2.3.1-2_amd64.deb …
+Распаковывается pigz (2.3.1-2) …
+Выбор ранее не выбранного пакета bridge-utils.
+Подготовка к распаковке …/bridge-utils_1.5-9ubuntu1_amd64.deb …
+Распаковывается bridge-utils (1.5-9ubuntu1) …
+Выбор ранее не выбранного пакета cgroupfs-mount.
+Подготовка к распаковке …/cgroupfs-mount_1.2_all.deb …
+Распаковывается cgroupfs-mount (1.2) …
+Выбор ранее не выбранного пакета runc.
+Подготовка к распаковке …/runc_1.0.0~rc7+git20190403.029124da-0ubuntu1~16.04.4_amd64.deb …
+Распаковывается runc (1.0.0~rc7+git20190403.029124da-0ubuntu1~16.04.4) …
+Выбор ранее не выбранного пакета containerd.
+Подготовка к распаковке …/containerd_1.2.6-0ubuntu1~16.04.6_amd64.deb …
+Распаковывается containerd (1.2.6-0ubuntu1~16.04.6) …
+Выбор ранее не выбранного пакета docker.io.
+Подготовка к распаковке …/docker.io_18.09.7-0ubuntu1~16.04.7_amd64.deb …
+Распаковывается docker.io (18.09.7-0ubuntu1~16.04.7) …
+Выбор ранее не выбранного пакета liberror-perl.
+Подготовка к распаковке …/liberror-perl_0.17-1.2_all.deb …
+Распаковывается liberror-perl (0.17-1.2) …
+Выбор ранее не выбранного пакета git-man.
+Подготовка к распаковке …/git-man_1%3a2.7.4-0ubuntu1.10_all.deb …
+Распаковывается git-man (1:2.7.4-0ubuntu1.10) …
+Выбор ранее не выбранного пакета git.
+Подготовка к распаковке …/git_1%3a2.7.4-0ubuntu1.10_amd64.deb …
+Распаковывается git (1:2.7.4-0ubuntu1.10) …
+Выбор ранее не выбранного пакета ubuntu-fan.
+Подготовка к распаковке …/ubuntu-fan_0.12.8~16.04.3_all.deb …
+Распаковывается ubuntu-fan (0.12.8~16.04.3) …
+Обрабатываются триггеры для man-db (2.7.5-1) …
+Обрабатываются триггеры для ureadahead (0.100.0-19) …
+Обрабатываются триггеры для systemd (229-4ubuntu21.21) …
+Настраивается пакет pigz (2.3.1-2) …
+Настраивается пакет bridge-utils (1.5-9ubuntu1) …
+Настраивается пакет cgroupfs-mount (1.2) …
+Настраивается пакет runc (1.0.0~rc7+git20190403.029124da-0ubuntu1~16.04.4) …
+Настраивается пакет containerd (1.2.6-0ubuntu1~16.04.6) …
+Настраивается пакет docker.io (18.09.7-0ubuntu1~16.04.7) …
+Добавляется группа «docker» (GID 130) ...
+Готово.
+Настраивается пакет liberror-perl (0.17-1.2) …
+Настраивается пакет git-man (1:2.7.4-0ubuntu1.10) …
+Настраивается пакет git (1:2.7.4-0ubuntu1.10) …
+Настраивается пакет ubuntu-fan (0.12.8~16.04.3) …
+Обрабатываются триггеры для systemd (229-4ubuntu21.21) …
+Обрабатываются триггеры для ureadahead (0.100.0-19) …
+
+_____________________________
+Задание 3
+student@Ubuntu-MySQL-VirtualBox:~$ sudo docker pull python
+Using default tag: latest
+latest: Pulling from library/python
+0bc3020d05f1: Pull complete 
+a110e5871660: Pull complete 
+83d3c0fa203a: Pull complete 
+a8fd09c11b02: Pull complete 
+14feb89c4a52: Pull complete 
+70752631d778: Pull complete 
+be0100d82341: Pull complete 
+055b01fdac49: Pull complete 
+7e4fe414911b: Pull complete 
+Digest: sha256:22d67fbf4849f06491933f273526e425342b210e9c8b90052708c09a00f6154f
+Status: Downloaded newer image for python:latest
+student@Ubuntu-MySQL-VirtualBox:~$ sudo docker run python
+student@Ubuntu-MySQL-VirtualBox:~$ sudo docker images
+REPOSITORY          TAG                 IMAGE ID            CREATED             SIZE
+python              latest              d92f72c38f7e        3 days ago          886MB
+student@Ubuntu-MySQL-VirtualBox:~$ sudo docker ps
+CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS              PORTS               NAMES
+student@Ubuntu-MySQL-VirtualBox:~$ sudo docker run --name Python -it python
+Python 3.9.6 (default, Jun 29 2021, 19:18:53) 
+[GCC 8.3.0] on linux
+Type "help", "copyright", "credits" or "license" for more information.
+>>> help
+Type help() for interactive help, or help(object) for help about object.
+>>> copyright
+Copyright (c) 2001-2021 Python Software Foundation.
+All Rights Reserved.
+
+Copyright (c) 2000 BeOpen.com.
+All Rights Reserved.
+
+Copyright (c) 1995-2001 Corporation for National Research Initiatives.
+All Rights Reserved.
+
+Copyright (c) 1991-1995 Stichting Mathematisch Centrum, Amsterdam.
+All Rights Reserved.
+
+>>> exit()
+student@Ubuntu-MySQL-VirtualBox:~$ sudo docker ps -a
+CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS                     PORTS               NAMES
+19f3f4a18e65        python              "python3"           6 minutes ago       Exited (0) 2 minutes ago                       Python
+64dd8c9706c1        python              "python3"           8 minutes ago       Exited (0) 8 minutes ago       gifted_meninsky

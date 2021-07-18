@@ -1,0 +1,160 @@
+Задание 1
+_______________________________________________________________
+student@Ubuntu-MySQL-VirtualBox:~$ echo 'text1' > file1
+student@Ubuntu-MySQL-VirtualBox:~$ cp file1 file2
+student@Ubuntu-MySQL-VirtualBox:~$ ln -s file1 file3
+student@Ubuntu-MySQL-VirtualBox:~$ ln file1 file4
+student@Ubuntu-MySQL-VirtualBox:~$ ls -li
+итого 440
+688670 -rw-rw-r-- 1 student student   6118 июн 21 19:17 etc_errors.txt
+680433 -rw-rw-r-- 1 student student 371489 июн 21 19:17 etc_files.txt
+680307 -rw-r--r-- 1 student student   8980 апр 22  2019 examples.desktop
+688706 -rw-rw-r-- 2 student student      6 июн 26 12:51 file1
+688721 -rw-rw-r-- 1 student student      6 июн 26 12:51 file2
+688723 lrwxrwxrwx 1 student student      5 июн 26 12:52 file3 -> file1
+688706 -rw-rw-r-- 2 student student      6 июн 26 12:51 file4
+688701 -rw-rw-r-- 1 student student     10 июн 21 21:07 my_file2.txt
+680138 -rw-rw-r-- 1 student student     20 июн 21 20:11 my_file.txt
+680158 drwxrwxr-x 2 student student   4096 июн 12 16:36 ssh
+650417 drwxr-xr-x 2 student student   4096 апр 22  2019 Видео
+650414 drwxr-xr-x 2 student student   4096 апр 22  2019 Документы
+650411 drwxr-xr-x 2 student student   4096 апр 22  2019 Загрузки
+650416 drwxr-xr-x 2 student student   4096 апр 22  2019 Изображения
+650415 drwxr-xr-x 2 student student   4096 апр 22  2019 Музыка
+650413 drwxr-xr-x 2 student student   4096 апр 22  2019 Общедоступные
+650410 drwxr-xr-x 2 student student   4096 апр 22  2019 Рабочий стол
+650412 drwxr-xr-x 2 student student   4096 апр 22  2019 Шаблоны
+student@Ubuntu-MySQL-VirtualBox:~$ rm file1
+student@Ubuntu-MySQL-VirtualBox:~$ ls -li
+итого 436
+688670 -rw-rw-r-- 1 student student   6118 июн 21 19:17 etc_errors.txt
+680433 -rw-rw-r-- 1 student student 371489 июн 21 19:17 etc_files.txt
+680307 -rw-r--r-- 1 student student   8980 апр 22  2019 examples.desktop
+688721 -rw-rw-r-- 1 student student      6 июн 26 12:51 file2
+688723 lrwxrwxrwx 1 student student      5 июн 26 12:52 file3 -> file1
+688706 -rw-rw-r-- 1 student student      6 июн 26 12:51 file4
+688701 -rw-rw-r-- 1 student student     10 июн 21 21:07 my_file2.txt
+680138 -rw-rw-r-- 1 student student     20 июн 21 20:11 my_file.txt
+680158 drwxrwxr-x 2 student student   4096 июн 12 16:36 ssh
+650417 drwxr-xr-x 2 student student   4096 апр 22  2019 Видео
+650414 drwxr-xr-x 2 student student   4096 апр 22  2019 Документы
+650411 drwxr-xr-x 2 student student   4096 апр 22  2019 Загрузки
+650416 drwxr-xr-x 2 student student   4096 апр 22  2019 Изображения
+650415 drwxr-xr-x 2 student student   4096 апр 22  2019 Музыка
+650413 drwxr-xr-x 2 student student   4096 апр 22  2019 Общедоступные
+650410 drwxr-xr-x 2 student student   4096 апр 22  2019 Рабочий стол
+650412 drwxr-xr-x 2 student student   4096 апр 22  2019 Шаблоны
+student@Ubuntu-MySQL-VirtualBox:~$ cat file*
+text1
+cat: file3: Нет такого файла или каталога
+text1
+student@Ubuntu-MySQL-VirtualBox:~$ 
+__________________________________________
+Задание 2
+student@Ubuntu-MySQL-VirtualBox:~$ mv file2 file2a
+student@Ubuntu-MySQL-VirtualBox:~$ mv file3 file3a
+student@Ubuntu-MySQL-VirtualBox:~$ mv file4 file4a
+student@Ubuntu-MySQL-VirtualBox:~$ ln -s file2a file2al
+student@Ubuntu-MySQL-VirtualBox:~$ mkdir homework5
+student@Ubuntu-MySQL-VirtualBox:~$ mv file3a homework5/
+student@Ubuntu-MySQL-VirtualBox:~$ mv file4a homewotk5/
+mv: невозможно переместить 'file4a' в 'homewotk5/': Это не каталог
+student@Ubuntu-MySQL-VirtualBox:~$ mv file4a homework5/
+student@Ubuntu-MySQL-VirtualBox:~$ mv file2al homework5/
+student@Ubuntu-MySQL-VirtualBox:~$ ls -li
+итого 436
+688670 -rw-rw-r-- 1 student student   6118 июн 21 19:17 etc_errors.txt
+680433 -rw-rw-r-- 1 student student 371489 июн 21 19:17 etc_files.txt
+680307 -rw-r--r-- 1 student student   8980 апр 22  2019 examples.desktop
+688721 -rw-rw-r-- 1 student student      6 июн 26 12:51 file2a
+688735 drwxrwxr-x 2 student student   4096 июн 26 13:09 homework5
+688701 -rw-rw-r-- 1 student student     10 июн 21 21:07 my_file2.txt
+680138 -rw-rw-r-- 1 student student     20 июн 21 20:11 my_file.txt
+680158 drwxrwxr-x 2 student student   4096 июн 12 16:36 ssh
+650417 drwxr-xr-x 2 student student   4096 апр 22  2019 Видео
+650414 drwxr-xr-x 2 student student   4096 апр 22  2019 Документы
+650411 drwxr-xr-x 2 student student   4096 апр 22  2019 Загрузки
+650416 drwxr-xr-x 2 student student   4096 апр 22  2019 Изображения
+650415 drwxr-xr-x 2 student student   4096 апр 22  2019 Музыка
+650413 drwxr-xr-x 2 student student   4096 апр 22  2019 Общедоступные
+650410 drwxr-xr-x 2 student student   4096 апр 22  2019 Рабочий стол
+650412 drwxr-xr-x 2 student student   4096 апр 22  2019 Шаблоны
+student@Ubuntu-MySQL-VirtualBox:~$ ls -li homework5/
+итого 4
+688724 lrwxrwxrwx 1 student student 6 июн 26 13:05 file2al -> file2a
+688723 lrwxrwxrwx 1 student student 5 июн 26 12:52 file3a -> file1
+688706 -rw-rw-r-- 1 student student 6 июн 26 12:51 file4a
+__________________________________________________________________
+Задание 3
+student@Ubuntu-MySQL-VirtualBox:~$ rm file2a
+student@Ubuntu-MySQL-VirtualBox:~$ echo > file1
+student@Ubuntu-MySQL-VirtualBox:~$ echo > file2
+student@Ubuntu-MySQL-VirtualBox:~$ ls -li
+итого 440
+688670 -rw-rw-r-- 1 student student   6118 июн 21 19:17 etc_errors.txt
+680433 -rw-rw-r-- 1 student student 371489 июн 21 19:17 etc_files.txt
+680307 -rw-r--r-- 1 student student   8980 апр 22  2019 examples.desktop
+688721 -rw-rw-r-- 1 student student      1 июн 26 13:13 file1
+688769 -rw-rw-r-- 1 student student      1 июн 26 13:13 file2
+688735 drwxrwxr-x 2 student student   4096 июн 26 13:09 homework5
+688701 -rw-rw-r-- 1 student student     10 июн 21 21:07 my_file2.txt
+680138 -rw-rw-r-- 1 student student     20 июн 21 20:11 my_file.txt
+680158 drwxrwxr-x 2 student student   4096 июн 12 16:36 ssh
+650417 drwxr-xr-x 2 student student   4096 апр 22  2019 Видео
+650414 drwxr-xr-x 2 student student   4096 апр 22  2019 Документы
+650411 drwxr-xr-x 2 student student   4096 апр 22  2019 Загрузки
+650416 drwxr-xr-x 2 student student   4096 апр 22  2019 Изображения
+650415 drwxr-xr-x 2 student student   4096 апр 22  2019 Музыка
+650413 drwxr-xr-x 2 student student   4096 апр 22  2019 Общедоступные
+650410 drwxr-xr-x 2 student student   4096 апр 22  2019 Рабочий стол
+650412 drwxr-xr-x 2 student student   4096 апр 22  2019 Шаблоны
+student@Ubuntu-MySQL-VirtualBox:~$ chmod u=rw,g=rw,o=r file1
+student@Ubuntu-MySQL-VirtualBox:~$ chmod u=rw file2
+student@Ubuntu-MySQL-VirtualBox:~$ 
+__________________________________________________________________
+Задание 4
+student@Ubuntu-MySQL-VirtualBox:~$ sudo groupadd developer
+[sudo] пароль для student: 
+student@Ubuntu-MySQL-VirtualBox:~$ sudo useradd -m -s /bin/bash user1
+student@Ubuntu-MySQL-VirtualBox:~$ sudo useradd -m -s /bin/bash user2
+student@Ubuntu-MySQL-VirtualBox:~$ sudo usermod -aG developer user1
+student@Ubuntu-MySQL-VirtualBox:~$ sudo usermod -aG developer user2
+student@Ubuntu-MySQL-VirtualBox:~$ mkdir devcloud
+student@Ubuntu-MySQL-VirtualBox:~$ chgrp developer devcloud
+chgrp: изменение группы для 'devcloud': Операция не позволена
+student@Ubuntu-MySQL-VirtualBox:~$ sudo chgrp developer devcloud
+student@Ubuntu-MySQL-VirtualBox:~$ chmod g+s devcloud
+_________________________________________________________________
+Задание 5
+student@Ubuntu-MySQL-VirtualBox:~$ mkdir devcloud/cloud/
+student@Ubuntu-MySQL-VirtualBox:~$ chmod +t devcloud/cloud/
+_______________________________________________________________
+Задание 6
+____________________________________________
+Вариант со скрытыми файлами
+____________________________________________
+student@Ubuntu-MySQL-VirtualBox:~$ mkdir fewfiles/
+student@Ubuntu-MySQL-VirtualBox:~$ touch fewfiles/.file{1..5}
+student@Ubuntu-MySQL-VirtualBox:~$ ls -l fewfiles/
+итого 0
+student@Ubuntu-MySQL-VirtualBox:~$ ls -a fewfiles/
+.  ..  .file1  .file2  .file3  .file4  .file5
+_______________________________________________________________
+Вариант с ограничением доступа
+___________________________________________________________
+student@Ubuntu-MySQL-VirtualBox:~$ rm -rf fewfiles/*
+student@Ubuntu-MySQL-VirtualBox:~$ touch fewfiles/file{1..5}
+student@Ubuntu-MySQL-VirtualBox:~$ chmod -r fewfiles/
+student@Ubuntu-MySQL-VirtualBox:~$ ls -l fewfiles/
+ls: невозможно открыть каталог 'fewfiles/': Отказано в доступе
+student@Ubuntu-MySQL-VirtualBox:~$ nano fewfiles/file1
+student@Ubuntu-MySQL-VirtualBox:~$ chmod +r fewfiles/
+student@Ubuntu-MySQL-VirtualBox:~$ ls -l fewfiles/
+итого 0
+-rw-rw-r-- 1 student student 0 июн 26 14:03 file1
+-rw-rw-r-- 1 student student 0 июн 26 14:03 file2
+-rw-rw-r-- 1 student student 0 июн 26 14:03 file3
+-rw-rw-r-- 1 student student 0 июн 26 14:03 file4
+-rw-rw-r-- 1 student student 0 июн 26 14:03 file5
+
+
