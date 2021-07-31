@@ -1,0 +1,19 @@
+/Добавляем пользователя/
+insert vk.user (email, phone, password_hash) values ('alex@mail.ru', 79031111111, sha1('alex@mail.ru'));
+
+SELECT * FROM vk.user;
+
+/Удаляем сообщения самому себе
+Чтобы это сделать проставил CASCADE в Foreign key options для таблицы с лайками/
+delete from vk.message where from_user_id = to_user_id;
+SELECT * FROM vk.message where from_user_id = to_user_id;
+
+/Изменим адрес для пользователей женского пола/
+UPDATE vk.profile SET
+address = 'Moscow'
+where gender = 'f';
+SELECT * FROM vk.profile;
+
+/Добавим столбец в таблицу/
+ALTER TABLE vk.profile ADD COLUMN INSTAGRAM varchar(20) after address;
+SELECT * FROM vk.profile;
