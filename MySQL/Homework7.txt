@@ -10,6 +10,5 @@ LEFT JOIN shop_hw.catalogs on products.catalog_id=catalogs.id;
 ______________________________
 Задание 3
 ________________________________
-select * from (select flights.id, `name` as `из` FROM shop_hw.flights left join shop_hw.cities on `from`=label) as table_1
-inner join
-(select flights.id, `name` as `в` FROM shop_hw.flights left join shop_hw.cities on `to`=label) as table_2 using(id);
+select c1.name as `из`, c2.name as `в` FROM shop_hw.flights  left join shop_hw.cities c1 on `from`=c1.label 
+left join shop_hw.cities c2 on `to`=c2.label 
