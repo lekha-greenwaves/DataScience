@@ -1,0 +1,15 @@
+Задание 1
+_________________________
+SELECT orders.id, users.id as `user` FROM shop_hw.users
+INNER JOIN shop_hw.orders on orders.user_id=users.id;
+_________________________
+Задание 2
+___________________________
+SELECT products.id, products.name,  catalogs.name as `раздел` FROM shop_hw.products
+LEFT JOIN shop_hw.catalogs on products.catalog_id=catalogs.id;
+______________________________
+Задание 3
+________________________________
+select * from (select flights.id, `name` as `из` FROM shop_hw.flights left join shop_hw.cities on `from`=label) as table_1
+inner join
+(select flights.id, `name` as `в` FROM shop_hw.flights left join shop_hw.cities on `to`=label) as table_2 using(id);
