@@ -1,0 +1,54 @@
+Транзакции 
+___________________________
+Задание 1
+__________________________
+START TRANSACTION;
+INSERT INTO sample.users (sample.users.id, sample.users.`name`) values ((select shop_hw.users.id from shop_hw.users where shop_hw.users.id = 1) , (select shop_hw.users.name from shop_hw.users where shop_hw.users.id = 1));
+COMMIT;
+______________________________
+Задание 2
+______________________________
+SELECT * FROM shop_hw.products;
+CREATE  VIEW products_view(p_id, p_name, c_name) AS
+SELECT p.id, p.name, c.name
+FROM products AS p
+LEFT JOIN catalogs AS c
+ON p.catalog_id = c.id;
+
+
+Функции, триггеры
+__________________
+Задание 1
+__________________
+DROP PROCEDURE IF EXISTS hello;
+DELIMITER //
+CREATE PROCEDURE hello()
+BEGIN
+	IF(CURTIME() BETWEEN '06:00:00' AND '12:00:00') THEN
+		SELECT 'Доброе утро';
+	ELSEIF(CURTIME() BETWEEN '12:00:00' AND '18:00:00') THEN
+		SELECT 'Добрый день';
+	ELSEIF(CURTIME() BETWEEN '18:00:00' AND '00:00:00') THEN
+		SELECT 'Добрый вечер';
+	ELSE
+		SELECT 'Доброй ночи';
+	END IF;
+END //
+delimiter ;
+
+CALL hello();
+_______________________
+Задание 2
+_____________________
+DROP TRIGGER IF EXISTS `shop_hw`.`products_BEFORE_INSERT`;
+
+DELIMITER $$
+USE `shop_hw`$$
+CREATE DEFINER = CURRENT_USER TRIGGER `shop_hw`.`products_BEFORE_INSERT` BEFORE INSERT ON `products` FOR EACH ROW
+BEGIN
+IF NEW.name IS NULL AND NEW.description IS NULL THEN
+		SIGNAL SQLSTATE '45000'
+		SET MESSAGE_TEXT = 'Fill in the  field name or description';
+END IF;
+END$$
+DELIMITER ;
