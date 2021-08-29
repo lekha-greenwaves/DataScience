@@ -1,0 +1,84 @@
+Оптимизация запросов
+Задание 1
+Создайте таблицу logs типа Archive. Пусть при каждом создании записи в таблицах users, catalogs и products в таблицу logs помещается
+ время и дата создания записи, название таблицы, идентификатор первичного ключа и содержимое поля name.
+________________________________
+DROP TABLE IF EXISTS logs;
+CREATE TABLE logs (created_at DATETIME,
+name_of_table VARCHAR(45),
+id_log INT,
+name_log VARCHAR(45) ) ENGINE = ARCHIVE;
+
+Триггер для таблицы users
+
+DROP TRIGGER IF EXISTS log_users;
+delimiter //
+CREATE TRIGGER log_users AFTER INSERT ON users
+FOR EACH ROW
+BEGIN
+	INSERT INTO logs (created_at, name_of_table, id_log, name_log)
+	VALUES (NOW(), 'users', users.id, users.name);
+END //
+delimiter ;
+
+
+Триггер для таблицы catalogs
+
+DROP TRIGGER IF EXISTS watchlog_catalogs;
+delimiter //
+CREATE TRIGGER log_catalogs AFTER INSERT ON catalogs
+FOR EACH ROW
+BEGIN
+	INSERT INTO logs (created_at, name_of_table, id_log, name_log)
+	VALUES (NOW(), 'catalogs', users.id, users.name);
+END //
+delimiter ;
+
+Триггер для таблицы products
+
+delimiter //
+CREATE TRIGGER log_products AFTER INSERT ON products
+FOR EACH ROW
+BEGIN
+	INSERT INTO logs (created_at, name_of_table, id_log, name_log)
+	VALUES (NOW(), 'products', users.id, users.name);
+END //
+delimiter ;
+__________________________
+
+NOSQL
+Задание 1
+__________________________
+В базе данных Redis подберите коллекцию для подсчета посещений с определенных IP-адресов.
+
+redis> SADD ip '192.168.0.1' '192.168.1.1' 
+(integer) 2
+redis> SCARD ip
+(integer) 2
+______________________________
+Задание 2
+__________________________
+При помощи базы данных Redis решите задачу поиска имени пользователя по электронному адресу и наоборот,
+ поиск электронного адреса пользователя по его имени
+______________________________
+redis> set ofsavier@gmail.com ofsavier
+"OK"
+redis> get ofsavier@gmail.com
+ofsavier
+redis> set ofsavier ofsavier@gmail.com 
+"OK"
+redis> get ofsavier
+ofsavier@gmail.com 
+
+Задание 3
+_________________________________
+Организуйте хранение категорий и товарных позиций учебной базы данных shop в СУБД MongoDB
+_________________________________________________________
+use shop
+mongo> db.shop.insert({"id": "1", "catalog_id": "1", "name": "Процессоры"})
+WriteResult({ "nInserted" : 1 })
+mongo> db.shop.insert({"id": "2", "catalog_id": "1", "name": "Процессоры"})
+WriteResult({ "nInserted" : 1 })
+mongo> db.shop.insert({"id": "5", "catalog_id": "2", "name": "Материнские платы"})
+WriteResult({ "nInserted" : 1 })
+
